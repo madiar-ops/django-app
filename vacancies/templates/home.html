@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="../static/styles/styles.css" />
+    {% block title %}{% endblock %}
+    {% block content %}
+    <header>
+      <h1>Welcome to the Vacancy Portal</h1>
+      <p>
+        Find your dream job with ease. Explore thousands of job opportunities
+        tailored to your skills.
+      </p>
+      <a href="{% url 'post_list' %}" class="btn">View Vacancies</a>
+
+    </header>
+    {% endblock %}
+  </body>
+</html>

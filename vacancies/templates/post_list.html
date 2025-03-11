@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vacancies</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="../static/styles/styles.css" />
+    {% extends 'home.html' %} Job Vacancies - Vacancy Site{%
+    endblock %} {% block content %}
+    <h1>Job Vacancies</h1>
+    <form method="GET" action="{% url 'post_list' %}">
+      <input type="text" name="search" placeholder="Search for vacancies..." />
+      <select name="company">
+        <option value="">Select Company</option>
+        {% for company in companies %}
+        <option value="{{ company.id }}">{{ company.name }}</option>
+        {% endfor %}
+      </select>
+      <select name="salary">
+        <option value="">Select Salary Range</option>
+        <option value="0-50000">0 - 50,000</option>
+        <option value="50000-100000">50,000 - 100,000</option>
+        <option value="100000+">100,000+</option>
+      </select>
+      <select name="experience">
+        <option value="">Select Experience Level</option>
+        <option value="entry">Entry Level</option>
+        <option value="mid">Mid Level</option>
+        <option value="senior">Senior Level</option>
+      </select>
+      <button type="submit">Filter</button>
+    </form>
+
+    <ul>
+
+      <li>
+        {% if vacancy.id %}
+    <a href="{% url 'vacancy_detail' vacancy.id %}">{{ vacancy.title }}</a>
+{% else %}
+    <span>{{ vacancy.title }}</span>  <!-- No link if ID is missing -->
+{% endif %}
+
+          ><strong>{{ vacancy.title }}</strong></a
+        >
+        - {{ vacancy.company }}
+        <p>{{ vacancy.short_description }}</p>
+      </li>
+      
+    </ul>
+    {% endblock %}
+  </body>
+</html>

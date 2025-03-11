@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Description of vacancies</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="../static/styles/styles.css" />
+    {% extends 'base.html' %} {% block title %}{{ vacancy.title }} - Vacancy
+    Site{% endblock %} {% block content %}
+    <h1>{{ vacancy.title }}</h1>
+    <p><strong>Company:</strong> {{ vacancy.company }}</p>
+    <p><strong>Location:</strong> {{ vacancy.location }}</p>
+    <p><strong>Salary:</strong> {{ vacancy.salary }}</p>
+    <p><strong>Experience Required:</strong> {{ vacancy.experience }}</p>
+    <p><strong>Job Description:</strong></p>
+    <p>{{ vacancy.description }}</p>
+    {% endblock %}
+  </body>
+</html>
