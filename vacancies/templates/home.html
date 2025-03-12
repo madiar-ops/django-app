@@ -1,23 +1,83 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-  </head>
-  <body>
-    <link rel="stylesheet" href="../static/styles/styles.css" />
+    <link rel="stylesheet" href="{% static './styles/styles.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
     {% block title %}{% endblock %}
     {% block content %}
-    <header>
-      <h1>Welcome to the Vacancy Portal</h1>
-      <p>
-        Find your dream job with ease. Explore thousands of job opportunities
-        tailored to your skills.
-      </p>
-      <a href="{% url 'post_list' %}" class="btn">View Vacancies</a>
-
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Vacancies</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="">Главная</a></li>
+                    <a href="{% url 'post_list' %}" class="btn">View Vacancies</a>
+                   
+                </ul>
+            </nav>
+            
+        </div>
     </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to the Vacancy Portal</h1>
+            <p>
+                Find your dream job with ease. Explore thousands of job opportunities
+                tailored to your skills.
+            </p>
+            <a href="{% url 'post_list' %}" class="btn">View Vacancies</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <h3>Тысячи вакансий</h3>
+                <p>Доступ к лучшим предложениям от топовых компаний.</p>
+            </div>
+            <div class="feature">
+                <h3>Простое резюме</h3>
+                <p>Создайте резюме за несколько минут и начните получать предложения.</p>
+            </div>
+            <div class="feature">
+                <h3>Умный поиск</h3>
+                <p>Находите работу, которая подходит именно вам.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="vacancies">
+        <div class="container">
+            <h2>Последние вакансии</h2>
+            <ul>
+                {% for vacancy in vacancies %}
+                <li>
+                    <a href="{% url 'vacancy_detail' vacancy.pk %}">{{ vacancy.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 JobFinder. Все права защищены.</p>
+            <ul>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Условия использования</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+    </footer>
     {% endblock %}
-  </body>
+</body>
 </html>

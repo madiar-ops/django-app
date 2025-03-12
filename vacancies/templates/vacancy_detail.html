@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,8 +7,8 @@
     <title>Description of vacancies</title>
   </head>
   <body>
-    <link rel="stylesheet" href="../static/styles/styles.css" />
-    {% extends 'base.html' %} {% block title %}{{ vacancy.title }} - Vacancy
+    <link rel="stylesheet" href={% static 'styles/styles.css' %} />
+     {% block title %}{{ vacancy.title }} - Vacancy
     Site{% endblock %} {% block content %}
     <h1>{{ vacancy.title }}</h1>
     <p><strong>Company:</strong> {{ vacancy.company }}</p>

@@ -119,3 +119,39 @@ footer {
         margin-bottom: 10px;
     }
 }
+.vacancies {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.vacancies h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.vacancies ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vacancies ul li {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vacancies ul li a {
+    font-size: 18px;
+    color: #0073e6;
+    font-weight: 500;
+}
+
+.vacancies ul li a:hover {
+    text-decoration: underline;
+}
