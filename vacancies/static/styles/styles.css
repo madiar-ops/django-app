@@ -155,3 +155,69 @@ footer {
 .vacancies ul li a:hover {
     text-decoration: underline;
 }
+/* Стили для деталей вакансии */
+.vacancy-detail {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.vacancy-detail h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.vacancy-info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.vacancy-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.vacancy-info p strong {
+    color: #333;
+}
+
+.job-description {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.job-description h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.job-description p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0073e6;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-back:hover {
+    background: #005bb5;
+}

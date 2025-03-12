@@ -1,22 +1,59 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Description of vacancies</title>
-  </head>
-  <body>
-    <link rel="stylesheet" href={% static 'styles/styles.css' %} />
-     {% block title %}{{ vacancy.title }} - Vacancy
-    Site{% endblock %} {% block content %}
-    <h1>{{ vacancy.title }}</h1>
-    <p><strong>Company:</strong> {{ vacancy.company }}</p>
-    <p><strong>Location:</strong> {{ vacancy.location }}</p>
-    <p><strong>Salary:</strong> {{ vacancy.salary }}</p>
-    <p><strong>Experience Required:</strong> {{ vacancy.experience }}</p>
-    <p><strong>Job Description:</strong></p>
-    <p>{{ vacancy.description }}</p>
+    <title>{{ vacancy.title }} - Vacancy Site</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% block title %}{{ vacancy.title }} - Vacancy Site{% endblock %}
+    {% block content %}
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">JobFinder</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    <li><a href="{% url 'post_list' %}">Вакансии</a></li>
+                    
+                </ul>
+            </nav>
+           
+        </div>
+    </header>
+
+    <section class="vacancy-detail">
+        <div class="container">
+            <h1>{{ vacancy.title }}</h1>
+            <div class="vacancy-info">
+                <p><strong>Company:</strong> {{ vacancy.company }}</p>
+                <p><strong>Location:</strong> {{ vacancy.location }}</p>
+                <p><strong>Salary:</strong> {{ vacancy.salary }}</p>
+                <p><strong>Experience Required:</strong> {{ vacancy.experience }}</p>
+            </div>
+            <div class="job-description">
+                <h2>Job Description</h2>
+                <p>{{ vacancy.description }}</p>
+            </div>
+            <a href="{% url 'post_list' %}" class="btn-back">Back to Vacancies</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 JobFinder. Все права защищены.</p>
+            <ul>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Условия использования</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+    </footer>
     {% endblock %}
-  </body>
+</body>
 </html>
